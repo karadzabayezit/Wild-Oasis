@@ -1,14 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { HiPencil, HiSquare2Stack, HiTrash } from 'react-icons/hi2';
-import ConfirmDelete from '../../ui/ConfirmDelete';
-import Menus from '../../ui/Menus';
-import Modal from '../../ui/Modal';
-import Table from '../../ui/Table';
-import { formatCurrency } from '../../utils/helpers';
-import CreateCabinForm from './CreateCabinForm';
-import { useCreateCabin } from './useCreateCabin';
-import { useDeleteCabin } from './useDeleteCabin';
+import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
+import ConfirmDelete from "../../ui/ConfirmDelete";
+import Menus from "../../ui/Menus";
+import Modal from "../../ui/Modal";
+import Table from "../../ui/Table";
+import { formatCurrency } from "../../utils/helpers";
+import CreateCabinForm from "./CreateCabinForm";
+import { useCreateCabin } from "./useCreateCabin";
+import { useDeleteCabin } from "./useDeleteCabin";
 
 const Img = styled.img`
   display: block;
@@ -23,16 +23,16 @@ const Cabin = styled.div`
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);
-  font-family: 'Sono';
+  font-family: "Sono";
 `;
 
 const Price = styled.div`
-  font-family: 'Sono';
+  font-family: "Sono";
   font-weight: 600;
 `;
 
 const Discount = styled.div`
-  font-family: 'Sono';
+  font-family: "Sono";
   font-weight: 500;
   color: var(--color-green-700);
 `;
@@ -52,11 +52,8 @@ const CabinRow = ({ cabin }) => {
     });
   };
   return (
-    <Table.Row role='row'>
-      <Img
-        src={image}
-        alt=''
-      />
+    <Table.Row role="row">
+      <Img src={image} alt="" />
       <Cabin>{name}</Cabin>
       <div>Fits up to {maxCapacity} guests</div>
       <Price>{formatCurrency(regularPrice)}</Price>
@@ -66,30 +63,23 @@ const CabinRow = ({ cabin }) => {
           <Menus.Menu>
             <Menus.Toggle id={cabinId} />
             <Menus.List id={cabinId}>
-              <Menus.Button
-                icon={<HiSquare2Stack />}
-                onClick={handleDuplicate}
-              >
+              <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate}>
                 Duplicate
               </Menus.Button>
-              <Modal.Open opens='edit'>
+              <Modal.Open opens="edit">
                 <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
               </Modal.Open>
 
-              <Modal.Open opens='delete'>
+              <Modal.Open opens="delete">
                 <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
               </Modal.Open>
             </Menus.List>
 
-            <Modal.Window name='edit'>
+            <Modal.Window name="edit">
               <CreateCabinForm cabinToUpdate={cabin} />
             </Modal.Window>
-            <Modal.Window name='delete'>
-              <ConfirmDelete
-                resourceName='cabins'
-                disabled={isDeleting}
-                onConfirm={() => deleteCabin(cabinId)}
-              />
+            <Modal.Window name="delete">
+              <ConfirmDelete resourceName="cabins" disabled={isDeleting} onConfirm={() => deleteCabin(cabinId)} />
             </Modal.Window>
           </Menus.Menu>
         </Modal>

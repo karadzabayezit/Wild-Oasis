@@ -1,22 +1,22 @@
-import { css, styled } from 'styled-components';
+import { css, styled } from "styled-components";
 
 const Row = styled.div`
   display: flex;
 
   ${(props) =>
-    props.type === 'horizontal' &&
+    props.type === "horizontal" &&
     css`
       justify-content: space-between;
       align-items: center;
     `}
   ${(props) =>
-    props.type === 'vertical' &&
+    props.type === "vertical" &&
     css`
       flex-direction: column;
       gap: 1.8rem;
     `}
 `;
 Row.defaultProps = {
-  type: 'vertical',
+  type: "vertical",
 };
 export default Row;

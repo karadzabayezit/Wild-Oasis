@@ -22,14 +22,7 @@ function CheckinBooking() {
 
   const booking = {};
 
-  const {
-    id: bookingId,
-    guests,
-    totalPrice,
-    numGuests,
-    hasBreakfast,
-    numNights,
-  } = booking;
+  const { id: bookingId, guests, totalPrice, numGuests, hasBreakfast, numNights } = booking;
 
   function handleCheckin() {}
 

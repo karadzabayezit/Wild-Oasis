@@ -1,8 +1,8 @@
-import { cloneElement, createContext, useContext, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { HiXMark } from 'react-icons/hi2';
-import styled from 'styled-components';
-import { useOutsideClick } from '../hooks/useOutsideClick';
+import { cloneElement, createContext, useContext, useState } from "react";
+import { createPortal } from "react-dom";
+import { HiXMark } from "react-icons/hi2";
+import styled from "styled-components";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const StyledModal = styled.div`
   position: fixed;
@@ -56,8 +56,8 @@ const Button = styled.button`
 const ModalContext = createContext();
 
 function Modal({ children }) {
-  const [openName, setOpenName] = useState('');
-  const close = () => setOpenName('');
+  const [openName, setOpenName] = useState("");
+  const close = () => setOpenName("");
   const open = setOpenName;
   return <ModalContext.Provider value={{ open, close, openName }}>{children}</ModalContext.Provider>;
 }
