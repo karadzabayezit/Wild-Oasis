@@ -30,6 +30,7 @@ const App = () => {
     <>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
+
         <GlobalStyles />
         <BrowserRouter>
           <Routes>
@@ -40,6 +41,7 @@ const App = () => {
                 </ProtectedRoute>
               }
             >
+              <Route index element={<Navigate replace to="dashboard" />} />
               <Route path="dashboard" element={<Dashboard />} />
               <Route path="bookings" element={<Bookings />} />
               <Route path="bookings/:bookingId" element={<Booking />} />
@@ -50,7 +52,6 @@ const App = () => {
               <Route path="account" element={<Account />} />
             </Route>
 
-            <Route index element={<Navigate replace to="dashboard" />} />
             <Route path="login" element={<Login />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
