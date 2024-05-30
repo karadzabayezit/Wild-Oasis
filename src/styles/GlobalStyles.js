@@ -119,7 +119,17 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
 }
-
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-grey-50);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-brand-800);
+  border-radius: 20px;
+  border: 3px solid var(--color-grey-100);
+}
 input,
 button,
 textarea,
@@ -177,10 +187,10 @@ h6 {
 
 img {
   max-width: 100%;
-
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
+
 
 `;
 
