@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
-import { Input } from "../../ui/Input";
+import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
 
 // Email regex: /\S+@\S+\.\S+/
@@ -68,7 +68,7 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button disabled={isLoading} variation="secondary" type="reset">
+        <Button disabled={isLoading} variation="secondary" type="reset" onClick={reset}>
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
